@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="pokedex.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f00;
+      font-family: sans-serif;
+    }
+
+    #pokedex {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    #pokemonList {
+      width: 200px;
+      background-color: #fff;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      height: fit-content;
+    }
+
+    #pokemonList h3 {
+      margin-top: 0;
+    }
+
+    #pokemonList ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #pokemonList li {
+      cursor: pointer;
+      padding: 6px;
+      margin-bottom: 5px;
+      background-color: #eee;
+      border-radius: 5px;
+      text-align: center;
+      transition: background-color 0.2s;
+    }
+
+    #pokemonList li:hover {
+      background-color: #ddd;
+    }
+
+    #right {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="pokedex">
+    <!-- Lista lateral -->
+    <div id="pokemonList">
+      <h3>Lista de Pokémon</h3>
+      <ul>
+        <li onclick="buscarPokemon('pikachu')">Pikachu</li>
+        <li onclick="buscarPokemon('bulbasaur')">Bulbasaur</li>
+        <li onclick="buscarPokemon('charmander')">Charmander</li>
+        <li onclick="buscarPokemon('squirtle')">Squirtle</li>
+        <li onclick="buscarPokemon('eevee')">Eevee</li>
+        <li onclick="buscarPokemon('jigglypuff')">Jigglypuff</li>
+        <li onclick="buscarPokemon('snorlax')">Snorlax</li>
+        <li onclick="buscarPokemon('meowth')">Meowth</li>
+        <li onclick="buscarPokemon('psyduck')">Psyduck</li>
+        <li onclick="buscarPokemon('dragonite')">Dragonite</li>
+      </ul>
+    </div>
+
+    <!-- Pokédex visual -->
+    <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"></div>
+        </div>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+        <div id="picture">
+          <img id="pokemonImage" title="Click e altere imagem" height="170" />
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      <div id="bigbluebutton"></div>
+      <div id="barbutton1"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross"><div id="leftT"></div></div>
+        <div id="topcross"><div id="upT"></div></div>
+        <div id="rightcross"><div id="rightT"></div></div>
+        <div id="midcross"><div id="midCircle"></div></div>
+        <div id="botcross"><div id="downT"></div></div>
+      </div>
+    </div>
+
+    <!-- Detalhes do Pokémon -->
+    <div id="right">
+      <div id="stats">
+        <strong>Nome:</strong> <span id="pokemonName">---</span><br />
+        <strong>Tipo:</strong> <span id="pokemonTypes">---</span><br />
+        <strong>Altura:</strong> <span id="pokemonHeight">---</span>m<br />
+        <strong>Peso:</strong> <span id="pokemonWeight">---</span>kg<br />
+        <strong>Habilidades:</strong> <span id="pokemonSkills">---</span><br />
+        <strong>Próxima Evolução:</strong> <span id="pokemonEvo">---</span><br />
+      </div>
+    </div>
+  </div>
+
+  <!-- Script no final -->
+  <script src="app.js"></script>
+</body>
+</html>
